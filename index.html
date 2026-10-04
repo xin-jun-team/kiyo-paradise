@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="琪玉天堂 — 純手動復刻，認真一拳，找回最初的感動。不收團、不請演員、GM 不下場。">
+<title>琪玉天堂 — 認真一拳 · 手動最強</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  /* ═══════════ 琪玉天堂 · 熔岩鎏金（取自主視覺）═══════════ */
+  :root{
+    --bg:#120a04; --bg2:#1c1107; --bg3:#241609;
+    --gold:#f0c23c; --gold-hi:#ffe488; --gold-deep:#b07818;
+    --ember:#ff7a1e; --ember-hi:#ffa24a;
+    --red:#d4342a; --red-hi:#ff5a3c;
+    --tx-hi:#fbf0d6; --tx:#ddc9a2; --tx-mut:#a88c60;
+    --line:rgba(240,194,60,.22);
+    --sans:'Noto Sans TC',sans-serif; --serif:'Noto Serif TC',serif;
+    --metal:linear-gradient(176deg,#fff3c4 4%,#ffd766 32%,#e0a632 60%,#a5701b 100%);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--tx);background:var(--bg);line-height:1.75;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+  .rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+  .rv.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
+
+  /* ── 頂部選單 ── */
+  .nav{position:sticky;top:0;z-index:40;background:rgba(18,10,4,.72);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav__in{max-width:1280px;margin:0 auto;padding:12px clamp(14px,2vw,24px);display:flex;align-items:center;gap:10px}
+  .nav__logo{display:flex;align-items:center;gap:10px}
+  .nav__logo img{height:42px;width:42px;object-fit:cover;border-radius:50%;border:1px solid var(--line);box-shadow:0 0 14px rgba(255,122,30,.45)}
+  .nav__logo span{font-family:var(--serif);font-weight:900;font-size:1.08rem;letter-spacing:.05em;white-space:nowrap;
+    background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}
+  /* 關於：圖左文右 */
+  .about2{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(26px,4vw,56px);align-items:center}
+  @media(max-width:820px){.about2{grid-template-columns:1fr}}
+  .about2__img{border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 20px 50px -24px rgba(0,0,0,.85)}
+  .about2__img img{width:100%;display:block}
+  .about2__tx{text-align:left}
+  .nav__menu{margin-left:auto;display:flex;gap:1px;align-items:center}
+  .nav__menu a{padding:6px 8px;font-size:.8rem;color:var(--tx);border-radius:6px;transition:.2s;white-space:nowrap}
+  .nav__menu a:hover{color:var(--gold-hi);background:rgba(255,122,30,.12)}
+  .nav__menu a.cta{background:var(--metal);color:#2a1702;font-weight:800}
+  .nav__dd{position:relative}
+  .nav__dd>button{background:none;border:0;color:var(--tx);font-family:inherit;font-size:.8rem;padding:6px 8px;border-radius:6px;cursor:pointer;transition:.2s;white-space:nowrap}
+  .nav__dd:hover>button{color:var(--gold-hi);background:rgba(255,122,30,.12)}
+  .nav__dd__menu{position:absolute;top:100%;left:0;min-width:168px;background:rgba(18,10,4,.98);border:1px solid var(--line);border-radius:8px;padding:6px;display:none;flex-direction:column;box-shadow:0 12px 30px -10px rgba(0,0,0,.75)}
+  .nav__dd:hover .nav__dd__menu{display:flex}
+  .nav__dd__menu a{padding:9px 12px;font-size:.86rem;border-radius:6px}
+  .nav__dd__menu a:hover{color:var(--gold-hi);background:rgba(255,122,30,.12)}
+  .nav__m .grp{color:var(--ember-hi);font-size:.76rem;letter-spacing:.14em;padding:12px 6px 4px}
+  .nav__burger{margin-left:auto;display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
+  .nav__burger span{width:24px;height:2px;background:var(--gold);border-radius:2px}
+  .nav__m{display:none;flex-direction:column;padding:6px 16px 14px;background:rgba(18,10,4,.97);border-bottom:1px solid var(--line)}
+  .nav__m a{padding:11px 6px;border-bottom:1px solid rgba(255,122,30,.12);font-size:.92rem}
+  .nav__m.open{display:flex}
+  @media(max-width:1180px){.nav__menu{display:none}.nav__burger{display:flex}}
+
+  /* ── 跑馬燈 ── */
+  .marquee{background:linear-gradient(90deg,#1c1107,#30200c,#1c1107);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;position:relative}
+  .marquee::before,.marquee::after{content:"";position:absolute;top:0;bottom:0;width:60px;z-index:2;pointer-events:none}
+  .marquee::before{left:0;background:linear-gradient(90deg,#1c1107,transparent)}
+  .marquee::after{right:0;background:linear-gradient(270deg,#1c1107,transparent)}
+  .marquee__track{display:inline-flex;align-items:center;padding:10px 0;animation:marq 32s linear infinite;will-change:transform}
+  .marquee:hover .marquee__track{animation-play-state:paused}
+  .marquee__item{font-size:.9rem;font-weight:700;letter-spacing:.05em;color:var(--gold-hi);padding:0 40px}
+  .marquee__item b{color:var(--red-hi)}
+  .marquee__item .pin{color:var(--ember-hi)}
+  @keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ── HERO（主視覺圖）── */
+  .hero{position:relative;min-height:clamp(560px,90vh,920px);display:flex;align-items:flex-end;overflow:hidden}
+  .hero__img{position:absolute;inset:0;background:url('assets/images/hero-kiyo.png') center/cover no-repeat}
+  .hero__veil{position:absolute;inset:0;background:
+    linear-gradient(180deg,transparent 50%,rgba(18,10,4,.4) 78%,rgba(18,10,4,.96) 100%),
+    linear-gradient(90deg,rgba(18,10,4,.5) 0%,transparent 42%)}
+  .hero__in{position:relative;z-index:2;width:100%;max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,56px) clamp(38px,7vh,76px)}
+  .hero__kicker{display:inline-flex;align-items:center;gap:10px;font-family:'Cinzel',serif;font-size:.74rem;letter-spacing:.32em;color:var(--gold-hi);margin-bottom:14px}
+  .hero__kicker::before{content:"";width:30px;height:1px;background:var(--ember)}
+  .hero__line{font-family:var(--serif);font-weight:900;font-size:clamp(1.5rem,4vw,2.6rem);color:var(--tx-hi);letter-spacing:.1em;line-height:1.35;text-shadow:0 3px 24px rgba(0,0,0,.9);margin-bottom:8px}
+  .hero__line em{font-style:normal;color:var(--gold);text-shadow:0 0 24px rgba(255,122,30,.55)}
+  .hero__sub{color:var(--tx);font-size:1rem;max-width:460px;margin-bottom:24px;text-shadow:0 2px 12px rgba(0,0,0,.8)}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 30px;font-family:var(--serif);font-weight:800;font-size:1.02rem;letter-spacing:.08em;border-radius:7px;transition:.2s}
+  .btn--gold{background:var(--metal);color:#2a1702;box-shadow:0 10px 28px -10px rgba(255,170,74,.6)}
+  .btn--gold:hover{transform:translateY(-3px);filter:brightness(1.07)}
+  .btn--ghost{background:rgba(212,52,42,.18);color:var(--gold-hi);border:1px solid var(--red)}
+  .btn--ghost:hover{transform:translateY(-3px);background:rgba(212,52,42,.3)}
+
+  /* ── 倍率條 ── */
+  .rates{background:linear-gradient(180deg,var(--bg3),var(--bg));border-bottom:1px solid var(--line);position:relative}
+  .rates::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 100% at 50% 0,rgba(255,122,30,.14),transparent 70%);pointer-events:none}
+  .rates__in{position:relative;display:flex;flex-wrap:wrap;gap:14px;justify-content:center;padding:26px clamp(18px,4vw,44px)}
+  .rate{min-width:120px;text-align:center;padding:16px 20px;border:1px solid var(--line);border-radius:10px;background:linear-gradient(160deg,rgba(255,122,30,.1),rgba(18,10,4,.4))}
+  .rate__k{font-size:.72rem;color:var(--tx-mut);letter-spacing:.14em;margin-bottom:6px}
+  .rate__v{font-family:var(--serif);font-weight:900;font-size:1.7rem;line-height:1;
+    background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .rate--manual .rate__v{background:none;color:var(--red-hi);-webkit-text-fill-color:var(--red-hi)}
+
+  /* ── 區段通用 ── */
+  .sec{padding:clamp(56px,8vw,100px) 0;position:relative}
+  .sec--feel{background:
+    radial-gradient(ellipse 70% 60% at 50% 0,rgba(255,122,30,.08),transparent 60%),
+    linear-gradient(180deg,var(--bg),var(--bg2))}
+  .sec--fair{background:linear-gradient(180deg,rgba(18,10,4,.74),rgba(18,10,4,.86)),url('assets/images/bg-fair.jpg') center/cover no-repeat fixed}
+  .eyebrow{text-align:center;font-family:'Cinzel',serif;font-size:.74rem;letter-spacing:.32em;color:var(--ember-hi);margin-bottom:14px}
+  .h2{text-align:center;font-family:var(--serif);font-weight:900;font-size:clamp(1.6rem,3.6vw,2.4rem);color:var(--tx-hi);letter-spacing:.1em;margin-bottom:10px}
+  .h2 em{font-style:normal;color:var(--gold)}
+
+  /* ── 情感短文 ── */
+  .feel{max-width:760px;margin:0 auto;text-align:center}
+  .feel__p{font-family:var(--serif);font-size:clamp(1.15rem,2.4vw,1.5rem);line-height:2.1;color:var(--tx-hi);letter-spacing:.06em}
+  .feel__p b{color:var(--gold);font-weight:900}
+  .feel__small{margin-top:22px;font-size:.95rem;color:var(--tx-mut);letter-spacing:.1em}
+
+  /* ── 公平三不 ── */
+  .vow{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1000px;margin:36px auto 0}
+  @media(max-width:760px){.vow{grid-template-columns:1fr}}
+  .vcard{text-align:center;padding:34px 22px;border-radius:14px;position:relative;overflow:hidden;
+    background:linear-gradient(160deg,rgba(212,52,42,.14),rgba(18,10,4,.7));border:1px solid var(--line)}
+  .vcard::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0,rgba(255,122,30,.16),transparent 70%);pointer-events:none}
+  .vcard__x{position:relative;font-size:2.2rem;margin-bottom:10px;filter:drop-shadow(0 0 10px rgba(212,52,42,.6))}
+  .vcard__t{position:relative;font-family:var(--serif);font-weight:900;font-size:1.4rem;color:var(--gold-hi);letter-spacing:.12em;margin-bottom:8px}
+  .vcard__d{position:relative;font-size:.9rem;color:var(--tx);line-height:1.8}
+
+  /* ── 結尾 CTA ── */
+  .join{text-align:center;padding:clamp(80px,12vw,150px) 0;position:relative;overflow:hidden;
+    background:linear-gradient(180deg,rgba(18,10,4,.66),rgba(12,6,3,.84)),url('assets/images/bg-join.png') center/cover no-repeat}
+  .join::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 120%,rgba(255,122,30,.18),transparent 65%);pointer-events:none}
+  .join__t{position:relative;font-family:var(--serif);font-weight:900;font-size:clamp(1.8rem,4.4vw,3rem);letter-spacing:.1em;margin-bottom:10px;
+    background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .join__s{position:relative;color:var(--tx);margin-bottom:28px;letter-spacing:.08em}
+  .join .cta-row{position:relative;justify-content:center}
+
+  /* ── 頁尾 ── */
+  .foot{background:#0c0603;border-top:1px solid var(--line);padding:34px 0 28px;text-align:center}
+  .foot__n{font-family:var(--serif);font-weight:900;font-size:1.2rem;letter-spacing:.12em;
+    background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:12px}
+  .foot__links{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
+  .foot__links a{font-size:.84rem;color:var(--tx);padding:6px 12px;border-radius:6px;transition:.2s}
+  .foot__links a:hover{color:var(--gold-hi)}
+  .foot__c{font-size:.76rem;color:var(--tx-mut);line-height:1.8}
+
+  /* ── 浮動側欄 ── */
+  .float{position:fixed;right:14px;bottom:20px;z-index:38;display:flex;flex-direction:column;gap:10px}
+  .float a{width:54px;height:54px;border-radius:13px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:.58rem;font-weight:700;
+    background:linear-gradient(150deg,rgba(36,22,9,.96),rgba(18,10,4,.96));border:1px solid var(--line);color:var(--tx);box-shadow:0 8px 22px -8px rgba(0,0,0,.7);transition:.2s}
+  .float a:hover{transform:translateY(-3px);border-color:var(--gold);color:var(--gold-hi)}
+  .float a.line:hover{border-color:#06c755;color:#3ee27f}
+  .float svg{width:21px;height:21px;fill:currentColor}
+  @media(max-width:560px){.float a{width:46px;height:46px}}
+  .rates,.sec,.join{position:relative}
+  .kiyo-home{position:absolute;pointer-events:none;z-index:4;filter:drop-shadow(0 6px 10px rgba(0,0,0,.5))}
+  .kh-rates{top:-64px;right:150px;width:86px}
+  .kh-feel{bottom:22px;right:38px;width:80px}
+  .kh-fair{top:30px;right:46px;width:92px}
+  @media(max-width:860px){.kiyo-home{display:none}}
+  .side{position:fixed;top:92px;z-index:30;width:188px;display:none}
+  .side-l{left:14px}.side-r{right:14px}
+  .side-card{background:linear-gradient(160deg,#1c1107,#120a04);border:1px solid var(--gold-hi);border-radius:14px;padding:12px 10px;text-align:center;box-shadow:0 10px 30px -10px rgba(0,0,0,.7)}
+  .side-card .face{width:100%;height:84px;object-fit:cover;object-position:50% 20%;border-radius:10px;border:1px solid var(--line)}
+  .side-card .qr{width:100%;border-radius:8px;margin-top:8px;background:#fff;padding:5px}
+  .side-card .t{font-family:var(--serif);font-weight:900;color:var(--gold-hi);font-size:.9rem;margin:8px 0 2px;line-height:1.4}
+  .side-card .s{color:var(--tx-hi);font-size:.72rem;line-height:1.5}
+  .side-r img.auto{width:100%;border-radius:12px;border:1px solid var(--gold-hi);box-shadow:0 10px 30px -10px rgba(255,122,30,.5)}
+  .side .banner{width:100%;border-radius:12px;border:1px solid var(--gold-hi);box-shadow:0 10px 30px -10px rgba(255,122,30,.5);display:block}
+  @media(min-width:1620px){.side{display:block}}
+  /*SIDEFX*/
+  .side{position:fixed;top:50%;transform:translateY(-50%);z-index:30;width:182px;display:none}
+  .side-l{left:12px}.side-r{right:12px}
+  .side .banner{width:100%;border-radius:12px;border:1px solid var(--gold-hi);box-shadow:0 10px 30px -10px rgba(255,122,30,.5);display:block}
+  @media(min-width:1620px){.side{display:block}}
+  .float{position:fixed;right:14px;bottom:20px;z-index:38;display:flex;flex-direction:column;gap:10px}
+  .float a{width:54px;height:54px;border-radius:13px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:.58rem;font-weight:700;background:rgba(18,10,4,.9);border:1px solid var(--line);color:var(--tx);transition:.2s}
+  .float a:hover{transform:translateY(-3px);border-color:var(--gold);color:var(--gold-hi)}
+  .float a.line:hover{border-color:#06c755;color:#3ee27f}
+  .float svg{width:21px;height:21px;fill:currentColor}
+  @media(max-width:560px){.float a{width:46px;height:46px}}
+</style>
+</head>
+<body>
+
+  <!-- 頂部選單 -->
+  <nav class="nav">
+    <div class="nav__in">
+      <a href="index.html" class="nav__logo"><img src="assets/images/logo-kiyo.jpg" alt="琪玉天堂"><span>琪玉天堂</span></a>
+                        <div class="nav__menu">
+        <a href="#feel">關於</a>
+        <div class="nav__dd">
+          <button>系統公告 ▾</button>
+          <div class="nav__dd__menu">
+            <a href="pages/disclaimer.html">免責聲明</a>
+            <a href="pages/rules.html">遊戲管理規章</a>
+            <a href="pages/anti-cheat.html">外掛懲處條例</a>
+            <a href="pages/speed-myth.html">加速器迷思</a>
+            <a href="pages/speed-detect.html">防外掛加速器及速度偵測說明</a>
+            <a href="pages/notice-verify.html">外掛偵測</a>
+            <a href="pages/faq.html">常見問題</a>
+          </div>
+        </div>
+        <a href="pages/sponsor.html">贊助須知</a>
+        <div class="nav__dd">
+          <button>活動公告 ▾</button>
+          <div class="nav__dd__menu">
+            <a href="pages/act-opening.html">開局頂級武器+變身娃娃</a>
+            <a href="pages/act-line.html">預約LINE禮包</a>
+            <a href="pages/act-combo.html">單筆滿額組合包</a>
+            <a href="pages/act-chongyang.html">開服慶典累積贊助禮包</a>
+            <a href="pages/act-rush.html">衝等禮包</a>
+            <a href="pages/act-hunt.html">開服聯歡狩獵慶</a>
+          </div>
+        </div>
+        <div class="nav__dd">
+          <button>遊戲特色 ▾</button>
+          <div class="nav__dd__menu">
+            <a href="pages/feat-mainquest.html">主線任務能力介紹</a>
+            <a href="pages/feat-dragonstone.html">龍印魔石</a>
+            <a href="pages/feat-prestige.html">威望陣營系統</a>
+            <a href="pages/feat-pet.html">寵物介紹</a>
+            <a href="pages/feat-highpet.html">高寵介紹</a>
+            <a href="pages/feat-classskill.html">職業特色技能</a>
+            <a href="pages/feat-summon.html">召喚術資訊介紹</a>
+            <a href="pages/feat-onlinegift.html">在線禮包與兌換物品</a>
+            <a href="pages/feat-affix.html">裝備詞墜 能力</a>
+            <a href="pages/feat-highskill.html">高技碎片掉落</a>
+          </div>
+        </div>
+        <div class="nav__dd">
+          <button>變身/娃娃介紹 ▾</button>
+          <div class="nav__dd__menu">
+            <a href="pages/transform-doll.html">變身介紹</a>
+            <a href="pages/doll.html">娃娃介紹</a>
+          </div>
+        </div>
+        <div class="nav__dd">
+          <button>武器介紹 ▾</button>
+          <div class="nav__dd__menu">
+            <a href="pages/item-weapon.html">武器總覽介紹</a>
+            <a href="pages/item-weapon-attr.html">武器屬性強化卷軸介紹</a>
+            <a href="pages/item-weapon-enchant.html">武器強化說明</a>
+            <a href="pages/item-craft-weapon.html">武器製作介紹</a>
+          </div>
+        </div>
+        <div class="nav__dd">
+          <button>防具介紹 ▾</button>
+          <div class="nav__dd__menu">
+            <a href="pages/item-armor.html">防具與飾品總覽</a>
+            <a href="pages/item-craft.html">防具飾品製作介紹</a>
+            <a href="pages/item-armor-enchant.html">防具強化說明</a>
+          </div>
+        </div>
+        <div class="nav__dd">
+          <button>道具介紹 ▾</button>
+          <div class="nav__dd__menu">
+            <a href="pages/item-vip.html">貴賓卡介紹</a>
+            <a href="pages/item-dragoneye.html">四龍之魔眼介紹</a>
+            <a href="pages/feat-treasure.html">職業賭徒-亞丁秘寶</a>
+            <a href="pages/item-candle.html">回憶蠟燭 (能力重置)</a>
+            <a href="pages/item-magicstone.html">神石介紹</a>
+          </div>
+        </div>
+        <div class="nav__dd">
+          <button>寶藏掉落 ▾</button>
+          <div class="nav__dd__menu">
+            <a href="pages/treasure-drop.html">寶藏掉落</a>
+            <a href="pages/bluestone.html">藍鑽獲取途徑</a>
+          </div>
+        </div>
+        <div class="nav__dd">
+          <button>推文/直播辦法 ▾</button>
+          <div class="nav__dd__menu">
+            <a href="pages/promo.html">推文獎勵</a>
+            <a href="pages/live.html">直播規章</a>
+          </div>
+        </div>
+        <a href="pages/class-change.html">轉職服務</a>
+        <a href="#join" class="cta">立即加入</a>
+      </div>
+      <button class="nav__burger" id="burger" aria-label="選單"><span></span><span></span><span></span></button>
+    </div>
+                <div class="nav__m" id="mnav">
+      <a href="#feel">關於</a>
+      <span class="grp">▸ 系統公告</span><a href="pages/disclaimer.html">免責聲明</a><a href="pages/rules.html">遊戲管理規章</a><a href="pages/anti-cheat.html">外掛懲處條例</a><a href="pages/speed-myth.html">加速器迷思</a><a href="pages/speed-detect.html">防外掛加速器及速度偵測說明</a><a href="pages/notice-verify.html">外掛偵測</a><a href="pages/faq.html">常見問題</a>
+      <a href="pages/sponsor.html">贊助須知</a>
+      <span class="grp">▸ 活動公告</span><a href="pages/act-opening.html">開局頂級武器+變身娃娃</a><a href="pages/act-line.html">預約LINE禮包</a><a href="pages/act-combo.html">單筆滿額組合包</a><a href="pages/act-chongyang.html">開服慶典累積贊助禮包</a><a href="pages/act-rush.html">衝等禮包</a><a href="pages/act-hunt.html">開服聯歡狩獵慶</a><span class="grp">▸ 遊戲特色</span><a href="pages/feat-mainquest.html">主線任務能力介紹</a><a href="pages/feat-dragonstone.html">龍印魔石</a><a href="pages/feat-prestige.html">威望陣營系統</a><a href="pages/feat-pet.html">寵物介紹</a><a href="pages/feat-highpet.html">高寵介紹</a><a href="pages/feat-classskill.html">職業特色技能</a><a href="pages/feat-summon.html">召喚術資訊介紹</a><a href="pages/feat-onlinegift.html">在線禮包與兌換物品</a><a href="pages/feat-affix.html">裝備詞墜 能力</a><a href="pages/feat-highskill.html">高技碎片掉落</a>
+      <span class="grp">▸ 變身/娃娃介紹</span><a href="pages/transform-doll.html">變身介紹</a><a href="pages/doll.html">娃娃介紹</a>
+      <span class="grp">▸ 武器介紹</span><a href="pages/item-weapon.html">武器總覽介紹</a><a href="pages/item-weapon-attr.html">武器屬性強化卷軸介紹</a><a href="pages/item-weapon-enchant.html">武器強化說明</a><a href="pages/item-craft-weapon.html">武器製作介紹</a>
+      <span class="grp">▸ 防具介紹</span><a href="pages/item-armor.html">防具與飾品總覽</a><a href="pages/item-craft.html">防具飾品製作介紹</a><a href="pages/item-armor-enchant.html">防具強化說明</a><span class="grp">▸ 道具介紹</span><a href="pages/item-vip.html">貴賓卡介紹</a><a href="pages/item-dragoneye.html">四龍之魔眼介紹</a><a href="pages/feat-treasure.html">職業賭徒-亞丁秘寶</a><a href="pages/item-candle.html">回憶蠟燭 (能力重置)</a><a href="pages/item-magicstone.html">神石介紹</a>
+      <span class="grp">▸ 寶藏掉落</span><a href="pages/treasure-drop.html">寶藏掉落</a><a href="pages/bluestone.html">藍鑽獲取途徑</a>
+      <span class="grp">▸ 推文/直播辦法</span><a href="pages/promo.html">推文獎勵</a><a href="pages/live.html">直播規章</a>
+      <a href="pages/class-change.html">轉職服務</a>
+      <a href="#join">立即加入</a>
+    </div>
+  </nav>
+
+  <!-- 跑馬燈 -->
+  <div class="marquee" aria-label="公告">
+    <div class="marquee__track">
+      <span class="marquee__item"><span class="pin">✨ 包月推文代工服務，請洽官方 ✨</span>　每月只要 <b>$399</b>，無計算讚石與累計禮包　·　專業團隊操盤，省去每日回報煩惱，獎勵直接發放！（詳情請私訊客服）</span>
+      <span class="marquee__item"><span class="pin">✨ 包月推文代工服務，請洽官方 ✨</span>　每月只要 <b>$399</b>，無計算讚石與累計禮包　·　專業團隊操盤，省去每日回報煩惱，獎勵直接發放！（詳情請私訊客服）</span>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <div class="hero__img"></div>
+    <div class="hero__veil"></div>
+    <div class="hero__in">
+      <div class="hero__kicker">LINEAGE · 手動服 · 3.81</div>
+      <h1 class="hero__line">認真一拳，<em>手動最強</em><br>找回最初的那份感動</h1>
+      <p class="hero__sub">沒有收團、沒有演員、GM 不下場。這裡只有你、一隻怪、一拳。</p>
+      <div class="cta-row">
+        <a href="pages/download.html" class="btn btn--gold">⚔ 立即下載</a>
+        <a href="https://line.me/ti/g2/_9VdkL5d4EhVXHUO-o3IbPL-CzQwBAmOm2KGkA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" rel="noopener" class="btn btn--ghost">🤙 加入社群</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 倍率 -->
+  <section class="rates" id="rates">
+    <img src="assets/images/ip/kiyo-thumb.png" class="kiyo-home kh-rates" alt="">
+    <div class="rates__in">
+      <div class="rate rate--manual"><div class="rate__k">伺服類型</div><div class="rate__v">純手動</div></div>
+      <div class="rate"><div class="rate__k">經驗倍率</div><div class="rate__v">×8</div></div>
+      <div class="rate"><div class="rate__k">金幣倍率</div><div class="rate__v">×4</div></div>
+      <div class="rate"><div class="rate__k">掉寶倍率</div><div class="rate__v">×2</div></div>
+      <div class="rate"><div class="rate__k">等級上限</div><div class="rate__v">62</div></div>
+    </div>
+  </section>
+
+  <!-- 情感短文 -->
+  <section class="sec sec--feel" id="feel">
+    <img src="assets/images/ip/kiyo-sit.png" class="kiyo-home kh-feel" alt="">
+    <div class="wrap">
+      <div class="about2">
+        <div class="about2__img rv"><img src="assets/images/bg-about.jpg" alt="關於琪玉 · 不是快，是踏實"></div>
+        <div class="about2__tx rv">
+          <p class="feel__p">還記得第一次，<b>親手</b>打倒一隻怪的心跳嗎？<br>沒有自動掛機、沒有代打工作室，<br>每一等、每一件裝，都是你<b>一拳一拳</b>換來的。<br>琪玉天堂，純手動復刻——把那份<b>最初的感動</b>還給你。</p>
+          <p class="feel__small">認真的一拳，才打得出重量。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 公平三不 -->
+  <section class="sec sec--fair" id="fair">
+    <img src="assets/images/ip/kiyo-cast.png" class="kiyo-home kh-fair" alt="">
+    <div class="wrap">
+      <p class="eyebrow">FAIR PLAY · 公平宣言</p>
+      <h2 class="h2">我們的<em>三不</em></h2>
+      <div class="vow">
+        <div class="vcard rv"><div class="vcard__x">⛔</div><div class="vcard__t">不收團</div><div class="vcard__d">拒絕 AT 收團、拒絕打手工作室，資源不被少數人壟斷。</div></div>
+        <div class="vcard rv"><div class="vcard__x">🚫</div><div class="vcard__t">不請演員</div><div class="vcard__d">沒有親友、沒有暗樁、沒有套好的假玩家，大家同一條起跑線。</div></div>
+        <div class="vcard rv"><div class="vcard__x">🙅</div><div class="vcard__t">GM 不下場</div><div class="vcard__d">GM 只維運、不玩自己的服，不與民爭利，公正裁判。</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 結尾 CTA -->
+  <section class="join" id="join">
+    <h2 class="join__t">認真一拳，就是現在</h2>
+    <p class="join__s">純手動 · 經驗 ×8 · 金幣 ×4 · 掉寶 ×2 · 等級上限 62</p>
+    <div class="cta-row">
+      <a href="pages/download.html" class="btn btn--gold">⚔ 立即下載</a>
+      <a href="https://line.me/ti/g2/_9VdkL5d4EhVXHUO-o3IbPL-CzQwBAmOm2KGkA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" rel="noopener" class="btn btn--ghost">🤙 加入官方社群</a>
+    </div>
+  </section>
+
+  <!-- 頁尾 -->
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__n">琪玉天堂</div>
+      <a href="https://www.gamex123.com" target="_blank" rel="noopener" style="display:inline-block;margin:4px 0 10px"><img src="assets/images/private-server-123.gif" alt="私服123" style="height:40px;border-radius:4px"></a>
+      <nav class="foot__links">
+        <a href="#feel">關於</a><a href="#join">加入我們</a><a href="https://lin.ee/wZ9Fra4" target="_blank" rel="noopener" style="color:#3ee27f">官方 LINE：@218yosex</a>
+      </nav>
+      <p class="foot__c" style="color:var(--gold-hi);margin-bottom:8px">🎨 加入阿柴美工 LINE <b style="color:var(--gold-hi)">@323rffot</b>，美工找我～</p>
+      <p class="foot__c">© 2026 琪玉天堂 · 純手動服 · 遊戲有成癮性，請節制遊玩 · 本站與 NC Soft 官方無任何關聯</p>
+    </div>
+  </footer>
+
+  <!-- 浮動側欄 -->
+
+  <script>
+  (function(){var b=document.getElementById('burger'),m=document.getElementById('mnav');if(b&&m)b.addEventListener('click',function(){m.classList.toggle('open');});})();
+  (function(){var els=document.querySelectorAll('.rv');if(!els.length||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});return;}
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.14});els.forEach(function(e){io.observe(e);});})();
+  </script>
+  <aside class="side side-l"><a href="https://lin.ee/wZ9Fra4" target="_blank" rel="noopener"><img src="assets/images/side-left.jpg" class="banner" alt="官方 LINE@"></a></aside>
+  <aside class="side side-r"><a href="pages/sponsor.html"><img src="assets/images/side-right.jpg" class="banner" alt="24H 自動贊助"></a></aside>
+  <div class="float">
+    <a href="pages/download.html" title="下載"><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>下載</a>
+    <a href="https://line.me/ti/g2/_9VdkL5d4EhVXHUO-o3IbPL-CzQwBAmOm2KGkA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" rel="noopener" class="line" title="社群"><svg viewBox="0 0 24 24"><path d="M24 10.3C24 4.94 18.62.57 12 .57S0 4.94 0 10.3c0 4.81 4.27 8.84 10.04 9.61.39.08.92.26 1.06.59.12.3.08.77.04 1.08l-.17 1.02c-.04.3-.24 1.19 1.05.64 1.29-.54 6.92-4.08 9.44-6.97C23.18 14.4 24 12.46 24 10.3M7.75 13.5H5.36a.63.63 0 01-.63-.63V8.11c0-.35.28-.63.63-.63.35 0 .63.28.63.63v4.13h1.76c.35 0 .63.28.63.63 0 .34-.28.63-.63.63m2.47-.63c0 .34-.28.63-.63.63a.63.63 0 01-.63-.63V8.11c0-.35.28-.63.63-.63.34 0 .63.28.63.63v4.76m5.74 0c0 .27-.17.51-.43.6a.65.65 0 01-.71-.22l-2.44-3.32v2.94c0 .34-.28.63-.63.63a.63.63 0 01-.63-.63V8.11c0-.27.17-.51.43-.6a.62.62 0 01.7.22l2.46 3.33V8.11c0-.35.28-.63.63-.63.34 0 .63.28.63.63v4.76m3.86-2.38c.35 0 .63.28.63.63 0 .34-.28.63-.63.63h-1.76v1.12h1.76c.35 0 .63.28.63.63 0 .34-.28.63-.63.63h-2.39a.63.63 0 01-.63-.63V8.11c0-.35.28-.63.63-.63h2.39c.35 0 .63.28.63.63 0 .35-.28.63-.63.63h-1.76v1.13h1.76"/></svg>社群</a>
+  </div>
+</body>
+</html>

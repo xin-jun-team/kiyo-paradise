@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="琪玉天堂 — 贊助須知">
+<title>贊助須知 — 琪玉天堂</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#120a04; --bg2:#1c1107; --bg3:#241609;
+    --gold:#f0c23c; --gold-hi:#ffe488; --gold-deep:#b07818;
+    --ember:#ff7a1e; --ember-hi:#ffa24a;
+    --red:#d4342a; --red-hi:#ff5a3c;
+    --tx-hi:#fbf0d6; --tx:#ddc9a2; --tx-mut:#a88c60;
+    --line:rgba(240,194,60,.22);
+    --sans:'Noto Sans TC',sans-serif; --serif:'Noto Serif TC',serif;
+    --metal:linear-gradient(176deg,#fff3c4 4%,#ffd766 32%,#e0a632 60%,#a5701b 100%);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--tx);background:var(--bg);line-height:1.85;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:900px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+
+  .nav{position:sticky;top:0;z-index:40;background:rgba(18,10,4,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav__in{max-width:1280px;margin:0 auto;padding:12px clamp(14px,2vw,24px);display:flex;align-items:center;gap:10px}
+  .nav__logo{display:flex;align-items:center;gap:10px}
+  .nav__logo img{height:42px;width:42px;object-fit:cover;border-radius:50%;border:1px solid var(--line);box-shadow:0 0 14px rgba(255,122,30,.45)}
+  .nav__logo span{font-family:var(--serif);font-weight:900;font-size:1.08rem;letter-spacing:.05em;white-space:nowrap;background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .nav__menu{margin-left:auto;display:flex;gap:1px;align-items:center}
+  .nav__menu a{padding:6px 8px;font-size:.8rem;color:var(--tx);border-radius:6px;transition:.2s;white-space:nowrap}
+  .nav__menu a:hover{color:var(--gold-hi);background:rgba(255,122,30,.12)}
+  .nav__menu a.cta{background:var(--metal);color:#2a1702;font-weight:800}
+  .nav__dd{position:relative}
+  .nav__dd>button{background:none;border:0;color:var(--tx);font-family:inherit;font-size:.8rem;padding:6px 8px;border-radius:6px;cursor:pointer;transition:.2s;white-space:nowrap}
+  .nav__dd:hover>button{color:var(--gold-hi);background:rgba(255,122,30,.12)}
+  .nav__dd__menu{position:absolute;top:100%;left:0;min-width:180px;background:rgba(18,10,4,.98);border:1px solid var(--line);border-radius:8px;padding:6px;display:none;flex-direction:column;box-shadow:0 12px 30px -10px rgba(0,0,0,.75)}
+  .nav__dd:hover .nav__dd__menu{display:flex}
+  .nav__dd__menu a{padding:9px 12px;font-size:.86rem;border-radius:6px;color:var(--tx)}
+  .nav__dd__menu a:hover{color:var(--gold-hi);background:rgba(255,122,30,.12)}
+  .nav__burger{margin-left:auto;display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
+  .nav__burger span{width:24px;height:2px;background:var(--gold);border-radius:2px}
+  .nav__m{display:none;flex-direction:column;padding:6px 16px 14px;background:rgba(18,10,4,.97);border-bottom:1px solid var(--line)}
+  .nav__m a{padding:11px 6px;border-bottom:1px solid rgba(255,122,30,.12);font-size:.92rem}
+  .nav__m .grp{color:var(--ember-hi);font-size:.76rem;letter-spacing:.14em;padding:12px 6px 4px}
+  .nav__m.open{display:flex}
+  @media(max-width:1180px){.nav__menu{display:none}.nav__burger{display:flex}}
+
+  .phero{position:relative;text-align:center;padding:clamp(54px,8vw,92px) 20px clamp(30px,5vw,46px);
+    background:radial-gradient(ellipse 70% 100% at 50% 0,rgba(255,122,30,.14),transparent 60%),linear-gradient(180deg,var(--bg3),var(--bg))}
+  .phero__eyebrow{font-family:'Cinzel',serif;font-size:.74rem;letter-spacing:.34em;color:var(--ember-hi);margin-bottom:12px}
+  .phero__title{font-family:var(--serif);font-weight:900;font-size:clamp(2rem,5vw,3rem);letter-spacing:.14em;background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 3px 16px rgba(255,122,30,.35))}
+
+  .main{padding:clamp(40px,6vw,72px) 0 clamp(60px,8vw,100px)}
+  .card{background:linear-gradient(160deg,rgba(36,22,9,.7),rgba(18,10,4,.8));border:1px solid var(--line);border-radius:14px;padding:24px clamp(20px,3vw,32px);margin-bottom:18px}
+  .card h2{font-family:var(--serif);font-weight:900;font-size:1.2rem;color:var(--gold-hi);letter-spacing:.05em;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+  .card p{color:var(--tx);font-size:.96rem;line-height:2;margin-bottom:10px}
+  .card p:last-child{margin-bottom:0}
+  .card p b{color:var(--gold-hi)}
+  .hl{color:var(--red-hi);font-weight:700}
+  .list{list-style:none;padding:0;margin:8px 0 0}
+  .list li{position:relative;padding:8px 0 8px 24px;font-size:.95rem;color:var(--tx-hi);line-height:1.8}
+  .list li::before{content:"➤";position:absolute;left:0;top:8px;color:var(--ember);font-size:.8rem}
+  .lead{text-align:center;font-family:var(--serif);font-size:1.1rem;color:var(--gold-hi);letter-spacing:.06em;margin-bottom:24px}
+
+  .back{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:12px 28px;border:1px solid var(--line);border-radius:7px;color:var(--gold-hi);font-weight:700;letter-spacing:.08em;transition:.2s}
+  .back:hover{border-color:var(--gold);background:rgba(255,122,30,.1)}
+
+  .foot{background:#0c0603;border-top:1px solid var(--line);padding:30px 0 26px;text-align:center}
+  .foot__n{font-family:var(--serif);font-weight:900;font-size:1.1rem;letter-spacing:.12em;background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:10px}
+  .foot__c{font-size:.76rem;color:var(--tx-mut);line-height:1.8}
+  .card{position:relative}
+  .kiyo{position:absolute;pointer-events:none;z-index:3;filter:drop-shadow(0 5px 9px rgba(0,0,0,.45))}
+  .kiyo-tr{top:-52px;right:18px;width:90px}
+  .kiyo-br{bottom:-8px;right:18px;width:110px}
+  @media(max-width:760px){.kiyo{display:none}}
+  .hp-intro{color:var(--tx);font-size:.96rem;line-height:2.05}
+  .hp-note{font-size:.84rem;color:var(--red-hi);border:1px solid rgba(212,52,42,.45);border-radius:20px;padding:3px 14px;display:inline-block;margin-top:4px}
+  .steps{display:grid;gap:14px;margin-top:4px}
+  .step{display:flex;gap:16px;align-items:flex-start;background:rgba(36,22,9,.5);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  .step__n{flex:0 0 40px;height:40px;border-radius:50%;background:var(--metal);color:#2a1702;font-family:var(--serif);font-weight:900;font-size:1.15rem;display:flex;align-items:center;justify-content:center}
+  .step__t{flex:1;color:var(--tx-hi);font-size:.98rem;line-height:1.8;padding-top:6px}
+  .step__t b{color:var(--gold-hi)}
+  .manual{list-style:none;padding:0;margin:6px 0 0;counter-reset:m}
+  .manual li{position:relative;padding:12px 0 12px 40px;border-bottom:1px solid rgba(240,194,60,.1);color:var(--tx-hi);font-size:.95rem;line-height:1.85;counter-increment:m}
+  .manual li:last-child{border-bottom:none}
+  .manual li::before{content:counter(m);position:absolute;left:0;top:11px;width:26px;height:26px;border-radius:50%;background:rgba(255,122,30,.16);border:1px solid var(--line);color:var(--gold-hi);font-weight:800;font-size:.82rem;display:flex;align-items:center;justify-content:center}
+  .manual li b{color:var(--gold-hi)}
+  .vip-p{color:var(--tx-hi);font-size:.97rem;line-height:2;margin-bottom:8px}
+  .vip-p b{color:var(--gold-hi)}
+  .vip-sub{font-family:var(--serif);font-weight:900;color:var(--gold-hi);font-size:1.04rem;margin:18px 0 4px}
+  .vip-more{text-align:center;color:var(--tx-mut);font-size:.92rem;letter-spacing:.12em;margin:26px 0 0}
+  .sp-intro{color:var(--tx-hi);font-size:.96rem;line-height:2}
+  .sp-intro b{color:var(--gold-hi)}
+  .wrapwide{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+  .tbl-wrap{margin-top:6px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  table.sp{width:100%;border-collapse:collapse;font-size:.92rem;table-layout:fixed}
+  table.sp th,table.sp td{padding:13px 16px;text-align:left;border-bottom:1px solid rgba(240,194,60,.12);line-height:1.8}
+  table.sp thead th{background:rgba(255,122,30,.14);color:var(--gold-hi);font-family:var(--serif);font-weight:900}
+  table.sp tbody tr:last-child td{border-bottom:none}
+  table.sp td:first-child{color:var(--gold-hi);font-weight:700}
+  table.sp td:last-child{color:var(--ember-hi);font-weight:800}
+  table.vip{width:100%;border-collapse:collapse;font-size:.88rem;table-layout:fixed}
+  table.vip col.c-lv{width:11%}table.vip col.c-s{width:15%}table.vip col.c-t{width:15%}table.vip col.c-a{width:59%}
+  table.vip th,table.vip td{padding:12px 15px;text-align:left;border-bottom:1px solid rgba(240,194,60,.12);line-height:1.85;vertical-align:top;word-break:break-word}
+  table.vip thead th{background:rgba(255,122,30,.14);color:var(--gold-hi);font-family:var(--serif);font-weight:900}
+  table.vip tbody tr:last-child td{border-bottom:none}
+  table.vip tbody tr:hover{background:rgba(255,122,30,.06)}
+  table.vip td.lv{color:var(--gold-hi);font-weight:800}
+  table.vip .s,table.vip .t{color:var(--ember-hi);font-weight:700}
+  table.vip .a{color:var(--tx-hi)}
+  .terms{list-style:none;padding:0;margin:6px 0 0}
+  .terms li{position:relative;padding:11px 0 11px 28px;border-bottom:1px solid rgba(240,194,60,.1);color:var(--tx-hi);font-size:.95rem;line-height:1.85}
+  .terms li:last-child{border-bottom:none}
+  .terms li::before{content:"💎";position:absolute;left:0;top:11px;font-size:.82rem}
+  .terms li b{color:var(--gold-hi)}
+  @media(max-width:760px){
+    .tbl-wrap{border:none}
+    table.vip,table.vip tbody,table.vip tr,table.vip td{display:block;width:100%}
+    table.vip colgroup,table.vip thead{display:none}
+    table.vip tr{border:1px solid var(--line);border-radius:12px;margin-bottom:14px;padding:4px 6px 8px;background:linear-gradient(160deg,rgba(36,22,9,.7),rgba(18,10,4,.8))}
+    table.vip td{border:none;border-bottom:1px solid rgba(240,194,60,.1);padding:11px 14px}
+    table.vip tr td:last-child{border-bottom:none}
+    table.vip td::before{content:attr(data-label);display:block;font-size:.72rem;color:var(--ember-hi);letter-spacing:.08em;font-weight:700;margin-bottom:4px}
+    table.vip td.lv{font-family:var(--serif);font-size:1.05rem;background:rgba(255,122,30,.08);border-radius:8px;margin:2px 0 4px}
+    table.vip td.lv::before{content:"";display:none}
+  }
+  .line-cta{display:inline-flex;align-items:center;gap:8px;background:#06C755;color:#fff;font-weight:800;padding:13px 30px;border-radius:9px;font-size:1rem;margin-top:10px;box-shadow:0 6px 18px -6px rgba(6,199,85,.6)}
+  .line-cta:hover{filter:brightness(1.1)}
+  .line-id{color:var(--tx-mut);font-size:.85rem;margin-top:8px}
+  /*SIDEFX*/
+  .side{position:fixed;top:50%;transform:translateY(-50%);z-index:30;width:182px;display:none}
+  .side-l{left:12px}.side-r{right:12px}
+  .side .banner{width:100%;border-radius:12px;border:1px solid var(--gold-hi);box-shadow:0 10px 30px -10px rgba(255,122,30,.5);display:block}
+  @media(min-width:1620px){.side{display:block}}
+  .float{position:fixed;right:14px;bottom:20px;z-index:38;display:flex;flex-direction:column;gap:10px}
+  .float a{width:54px;height:54px;border-radius:13px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:.58rem;font-weight:700;background:rgba(18,10,4,.9);border:1px solid var(--line);color:var(--tx);transition:.2s}
+  .float a:hover{transform:translateY(-3px);border-color:var(--gold);color:var(--gold-hi)}
+  .float a.line:hover{border-color:#06c755;color:#3ee27f}
+  .float svg{width:21px;height:21px;fill:currentColor}
+  @media(max-width:560px){.float a{width:46px;height:46px}}
+</style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav__in">
+      <a href="../index.html" class="nav__logo"><img src="../assets/images/logo-kiyo.jpg" alt="琪玉天堂"><span>琪玉天堂</span></a>
+                        <div class="nav__menu">
+        <a href="../index.html#feel">關於</a>
+        <div class="nav__dd">
+          <button>系統公告 ▾</button>
+          <div class="nav__dd__menu">
+            <a href="disclaimer.html">免責聲明</a>
+            <a href="rules.html">遊戲管理規章</a>
+            <a href="anti-cheat.html">外掛懲處條例</a>
+            <a href="speed-myth.html">加速器迷思</a>
+            <a href="speed-detect.html">防外掛加速器及速度偵測說明</a>
+            <a href="notice-verify.html">外掛偵測</a>
+            <a href="faq.html">常見問題</a>
+          </div>
+        </div>
+        <a href="sponsor.html">贊助須知</a>
+        <div class="nav__dd">
+          <button>活動公告 ▾</button>
+          <div class="nav__dd__menu">
+            <a href="act-opening.html">開局頂級武器+變身娃娃</a>
+            <a href="act-line.html">預約LINE禮包</a>
+            <a href="act-combo.html">單筆滿額組合包</a>
+            <a href="act-chongyang.html">開服慶典累積贊助禮包</a>
+            <a href="act-rush.html">衝等禮包</a>
+            <a href="act-hunt.html">開服聯歡狩獵慶</a>
+          </div>
+        </div>
+        <div class="nav__dd">
+          <button>遊戲特色 ▾</button>
+          <div class="nav__dd__menu">
+            <a href="feat-mainquest.html">主線任務能力介紹</a>
+            <a href="feat-dragonstone.html">龍印魔石</a>
+            <a href="feat-prestige.html">威望陣營系統</a>
+            <a href="feat-pet.html">寵物介紹</a>
+            <a href="feat-highpet.html">高寵介紹</a>
+            <a href="feat-classskill.html">職業特色技能</a>
+            <a href="feat-summon.html">召喚術資訊介紹</a>
+            <a href="feat-onlinegift.html">在線禮包與兌換物品</a>
+            <a href="feat-affix.html">裝備詞墜 能力</a>
+            <a href="feat-highskill.html">高技碎片掉落</a>
+          </div>
+        </div>
+        <div class="nav__dd">
+          <button>變身/娃娃介紹 ▾</button>
+          <div class="nav__dd__menu">
+            <a href="transform-doll.html">變身介紹</a>
+            <a href="doll.html">娃娃介紹</a>
+          </div>
+        </div>
+        <div class="nav__dd">
+          <button>武器介紹 ▾</button>
+          <div class="nav__dd__menu">
+            <a href="item-weapon.html">武器總覽介紹</a>
+            <a href="item-weapon-attr.html">武器屬性強化卷軸介紹</a>
+            <a href="item-weapon-enchant.html">武器強化說明</a>
+            <a href="item-craft-weapon.html">武器製作介紹</a>
+          </div>
+        </div>
+        <div class="nav__dd">
+          <button>防具介紹 ▾</button>
+          <div class="nav__dd__menu">
+            <a href="item-armor.html">防具與飾品總覽</a>
+            <a href="item-craft.html">防具飾品製作介紹</a>
+            <a href="item-armor-enchant.html">防具強化說明</a>
+          </div>
+        </div>
+        <div class="nav__dd">
+          <button>道具介紹 ▾</button>
+          <div class="nav__dd__menu">
+            <a href="item-vip.html">貴賓卡介紹</a>
+            <a href="item-dragoneye.html">四龍之魔眼介紹</a>
+            <a href="feat-treasure.html">職業賭徒-亞丁秘寶</a>
+            <a href="item-candle.html">回憶蠟燭 (能力重置)</a>
+            <a href="item-magicstone.html">神石介紹</a>
+          </div>
+        </div>
+        <div class="nav__dd">
+          <button>寶藏掉落 ▾</button>
+          <div class="nav__dd__menu">
+            <a href="treasure-drop.html">寶藏掉落</a>
+            <a href="bluestone.html">藍鑽獲取途徑</a>
+          </div>
+        </div>
+        <div class="nav__dd">
+          <button>推文/直播辦法 ▾</button>
+          <div class="nav__dd__menu">
+            <a href="promo.html">推文獎勵</a>
+            <a href="live.html">直播規章</a>
+          </div>
+        </div>
+        <a href="class-change.html">轉職服務</a>
+        <a href="../index.html#join" class="cta">立即加入</a>
+      </div>
+      <button class="nav__burger" id="burger" aria-label="選單"><span></span><span></span><span></span></button>
+    </div>
+                <div class="nav__m" id="mnav">
+      <a href="../index.html#feel">關於</a>
+      <span class="grp">▸ 系統公告</span><a href="disclaimer.html">免責聲明</a><a href="rules.html">遊戲管理規章</a><a href="anti-cheat.html">外掛懲處條例</a><a href="speed-myth.html">加速器迷思</a><a href="speed-detect.html">防外掛加速器及速度偵測說明</a><a href="notice-verify.html">外掛偵測</a><a href="faq.html">常見問題</a>
+      <a href="sponsor.html">贊助須知</a>
+      <span class="grp">▸ 活動公告</span><a href="act-opening.html">開局頂級武器+變身娃娃</a><a href="act-line.html">預約LINE禮包</a><a href="act-combo.html">單筆滿額組合包</a><a href="act-chongyang.html">開服慶典累積贊助禮包</a><a href="act-rush.html">衝等禮包</a><a href="act-hunt.html">開服聯歡狩獵慶</a><span class="grp">▸ 遊戲特色</span><a href="feat-mainquest.html">主線任務能力介紹</a><a href="feat-dragonstone.html">龍印魔石</a><a href="feat-prestige.html">威望陣營系統</a><a href="feat-pet.html">寵物介紹</a><a href="feat-highpet.html">高寵介紹</a><a href="feat-classskill.html">職業特色技能</a><a href="feat-summon.html">召喚術資訊介紹</a><a href="feat-onlinegift.html">在線禮包與兌換物品</a><a href="feat-affix.html">裝備詞墜 能力</a><a href="feat-highskill.html">高技碎片掉落</a>
+      <span class="grp">▸ 變身/娃娃介紹</span><a href="transform-doll.html">變身介紹</a><a href="doll.html">娃娃介紹</a>
+      <span class="grp">▸ 武器介紹</span><a href="item-weapon.html">武器總覽介紹</a><a href="item-weapon-attr.html">武器屬性強化卷軸介紹</a><a href="item-weapon-enchant.html">武器強化說明</a><a href="item-craft-weapon.html">武器製作介紹</a>
+      <span class="grp">▸ 防具介紹</span><a href="item-armor.html">防具與飾品總覽</a><a href="item-craft.html">防具飾品製作介紹</a><a href="item-armor-enchant.html">防具強化說明</a><span class="grp">▸ 道具介紹</span><a href="item-vip.html">貴賓卡介紹</a><a href="item-dragoneye.html">四龍之魔眼介紹</a><a href="feat-treasure.html">職業賭徒-亞丁秘寶</a><a href="item-candle.html">回憶蠟燭 (能力重置)</a><a href="item-magicstone.html">神石介紹</a>
+      <span class="grp">▸ 寶藏掉落</span><a href="treasure-drop.html">寶藏掉落</a><a href="bluestone.html">藍鑽獲取途徑</a>
+      <span class="grp">▸ 推文/直播辦法</span><a href="promo.html">推文獎勵</a><a href="live.html">直播規章</a>
+      <a href="class-change.html">轉職服務</a>
+      <a href="../index.html#join">立即加入</a>
+    </div>
+  </nav>
+
+  <div class="phero">
+    <p class="phero__eyebrow">贊助專區</p>
+    <h1 class="phero__title">贊助須知</h1>
+  </div>
+
+  <main class="main">
+    <div class="wrap">
+
+      <div class="card">
+        <img src="../assets/images/ip/kiyo-diamond.png" class="kiyo kiyo-tr" alt="">
+        <h2>💰 單筆贊助比值表</h2>
+        <div class="tbl-wrap">
+          <table class="sp">
+            <thead><tr><th>單筆贊助額度</th><th>贊助比值</th></tr></thead>
+            <tbody>
+              <tr><td>1,000 ~ 2,999 NT</td><td>1 : 1.00</td></tr>
+              <tr><td>3,000 ~ 5,999 NT</td><td>1 : 1.05</td></tr>
+              <tr><td>6,000 ~ 9,999 NT</td><td>1 : 1.10</td></tr>
+              <tr><td>10,000 以上</td><td>1 : 1.15</td></tr>
+              <tr><td>20,000 以上</td><td>1 : 1.20</td></tr>
+              <tr><td>30,000 以上</td><td>1 : 1.30</td></tr>
+              <tr><td>40,000 以上</td><td>1 : 1.40</td></tr>
+              <tr><td>50,000 以上</td><td>1 : 1.50</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+    <div class="wrapwide">
+      <div class="card">
+        <img src="../assets/images/ip/kiyo-carry.png" class="kiyo kiyo-tr" alt="">
+        <h2>👑 VIP 等級能力表</h2>
+        <p class="sp-intro">💡 VIP 由「商城消費紅利」逐階合成，<b>與贊助金額多寡無關</b>。藍鑽不論從任何管道取得，只要在商城消費即可獲得紅利；紅利需一階一階往上合成，因此實際門檻為各階累加。</p>
+        <p class="sp-intro" style="color:var(--tx-mut);font-size:.9rem">例如升到 VIP 3 需要 1,000 ＋ 3,000 ＋ 6,000 ＝ 10,000 紅利（即下表「累計投入紅利」欄）。</p>
+        <div class="tbl-wrap">
+          <table class="vip">
+            <colgroup><col class="c-lv"><col class="c-s"><col class="c-t"><col class="c-a"></colgroup>
+            <thead><tr><th>VIP 等級</th><th>本階合成紅利</th><th>累計投入紅利</th><th>能力加成</th></tr></thead>
+            <tbody>
+              <tr><td class="lv" data-label="VIP 等級">VIP 1</td><td class="s" data-label="本階合成紅利">1,000</td><td class="t" data-label="累計投入紅利">1,000</td><td class="a" data-label="能力加成">HP+40, MP+20, 經驗+2%</td></tr>
+              <tr><td class="lv" data-label="VIP 等級">VIP 2</td><td class="s" data-label="本階合成紅利">3,000</td><td class="t" data-label="累計投入紅利">4,000</td><td class="a" data-label="能力加成">防-1, HP+60, MP+30, 經驗+4%</td></tr>
+              <tr><td class="lv" data-label="VIP 等級">VIP 3</td><td class="s" data-label="本階合成紅利">6,000</td><td class="t" data-label="累計投入紅利">10,000</td><td class="a" data-label="能力加成">防-1, HP+80, MP+40, 經驗+6%, 體魔回+1</td></tr>
+              <tr><td class="lv" data-label="VIP 等級">VIP 4</td><td class="s" data-label="本階合成紅利">10,000</td><td class="t" data-label="累計投入紅利">20,000</td><td class="a" data-label="能力加成">防-1, 額攻+1, HP+100, MP+50, 經驗+8%, 體魔回+1</td></tr>
+              <tr><td class="lv" data-label="VIP 等級">VIP 5</td><td class="s" data-label="本階合成紅利">20,000</td><td class="t" data-label="累計投入紅利">40,000</td><td class="a" data-label="能力加成">防-2, 額攻+1, HP+120, MP+60, 經驗+10%, 體魔回+2</td></tr>
+              <tr><td class="lv" data-label="VIP 等級">VIP 6</td><td class="s" data-label="本階合成紅利">30,000</td><td class="t" data-label="累計投入紅利">70,000</td><td class="a" data-label="能力加成">防-2, 額攻+2, 力敏智+1, HP+160, MP+70, 經驗+11%, 體魔回+2, 減傷+1</td></tr>
+              <tr><td class="lv" data-label="VIP 等級">VIP 7</td><td class="s" data-label="本階合成紅利">40,000</td><td class="t" data-label="累計投入紅利">110,000</td><td class="a" data-label="能力加成">防-3, 額攻+5, 力敏智+1, HP+180, MP+80, 經驗+12%, 體魔回+2, 減傷+1</td></tr>
+              <tr><td class="lv" data-label="VIP 等級">VIP 8</td><td class="s" data-label="本階合成紅利">50,000</td><td class="t" data-label="累計投入紅利">160,000</td><td class="a" data-label="能力加成">防-4, 額攻+5, 力敏智+1, HP+200, MP+90, 經驗+13%, 體魔回+3, 減傷+2</td></tr>
+              <tr><td class="lv" data-label="VIP 等級">VIP 9</td><td class="s" data-label="本階合成紅利">60,000</td><td class="t" data-label="累計投入紅利">220,000</td><td class="a" data-label="能力加成">防-5, 額攻+7, 力敏智+1, HP+220, MP+100, 經驗+14%, 體魔回+4, 減傷+3</td></tr>
+              <tr><td class="lv" data-label="VIP 等級">VIP 10</td><td class="s" data-label="本階合成紅利">80,000</td><td class="t" data-label="累計投入紅利">300,000</td><td class="a" data-label="能力加成">防-8, 額攻+9, 力敏智+2, HP+250, MP+150, 經驗+20%, 體魔回+5, 減傷+4</td></tr>
+              <tr><td class="lv" data-label="VIP 等級">VIP 11</td><td class="s" data-label="本階合成紅利">90,000</td><td class="t" data-label="累計投入紅利">390,000</td><td class="a" data-label="能力加成">防-10, 額攻+11, 力敏智+3, HP+500, MP+300, 經驗+25%, 體魔回+6, 減傷+5</td></tr>
+              <tr><td class="lv" data-label="VIP 等級">VIP 12</td><td class="s" data-label="本階合成紅利">100,000</td><td class="t" data-label="累計投入紅利">490,000</td><td class="a" data-label="能力加成">防-12, 額攻+12, 力敏智+3, HP+600, MP+350, 經驗+26%, 體魔回+8, 減傷+6</td></tr>
+              <tr><td class="lv" data-label="VIP 等級">VIP 13</td><td class="s" data-label="本階合成紅利">110,000</td><td class="t" data-label="累計投入紅利">600,000</td><td class="a" data-label="能力加成">防-14, 額攻+13, 力敏智+3, HP+700, MP+400, 經驗+27%, 體魔回+10, 減傷+7</td></tr>
+              <tr><td class="lv" data-label="VIP 等級">VIP 14</td><td class="s" data-label="本階合成紅利">120,000</td><td class="t" data-label="累計投入紅利">720,000</td><td class="a" data-label="能力加成">防-16, 額攻+14, 力敏智+4, HP+800, MP+450, 經驗+28%, 體魔回+12, 減傷+8</td></tr>
+              <tr><td class="lv" data-label="VIP 等級">VIP 15</td><td class="s" data-label="本階合成紅利">130,000</td><td class="t" data-label="累計投入紅利">850,000</td><td class="a" data-label="能力加成">防-18, 額攻+15, 力敏智+4, HP+900, MP+500, 經驗+30%, 體魔回+14, 減傷+10</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="card">
+        <img src="../assets/images/ip/kiyo-sit.png" class="kiyo kiyo-tr" alt="">
+        <h2>📜 贊助條款</h2>
+        <ul class="terms">
+          <li><b>自願原則：</b>玩家必須出於自願贊助，本服絕不勉強。</li>
+          <li><b>帳號保管：</b>請玩家自行妥善保管好自己的帳號和密碼。</li>
+          <li><b>強化風險：</b>贊助之物品如出現強化爆掉，請玩家自行負責，本服一概不賠償。</li>
+          <li><b>物品糾紛：</b>贊助之物品若有轉借狀況而發生糾紛或遺失，本服一律不處理。</li>
+          <li><b>購買確定性：</b>贊助商品購買後，絕對不接受退換或更換。</li>
+          <li><b>死亡噴裝：</b>在正義值未滿的情況下如死亡，贊助物品也會有機率噴出掉落。</li>
+          <li><b>不代為強化：</b>贊助商品玩家必須自行強化。</li>
+        </ul>
+      </div>
+      <div class="card" style="text-align:center;border-color:rgba(6,199,85,.4)">
+        <img src="../assets/images/ip/kiyo-wave.png" class="kiyo kiyo-tr" alt="">
+        <h2 style="justify-content:center">💬 贊助手動開單</h2>
+        <p class="sp-intro">贊助手動開單，請聯繫官方 LINE 窗口：</p>
+        <a href="https://lin.ee/wZ9Fra4" target="_blank" rel="noopener" class="line-cta">💬 加入官方 LINE</a>
+        <p class="line-id">LINE ID：@218yosex</p>
+      </div>
+
+      <a href="../index.html" class="back">← 返回首頁</a>
+
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__n">琪玉天堂</div>
+      <a href="https://www.gamex123.com" target="_blank" rel="noopener" style="display:inline-block;margin:4px 0 10px"><img src="../assets/images/private-server-123.gif" alt="私服123" style="height:40px;border-radius:4px"></a>
+      <p class="foot__c" style="color:var(--gold-hi);margin-bottom:8px">🎨 加入阿柴美工 LINE <b style="color:var(--gold-hi)">@323rffot</b>，美工找我～</p>
+      <p class="foot__c">© 2026 琪玉天堂 · 純手動服 · 遊戲有成癮性，請節制遊玩 · 本站與 NC Soft 官方無任何關聯</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){var b=document.getElementById('burger'),m=document.getElementById('mnav');if(b&&m)b.addEventListener('click',function(){m.classList.toggle('open');});})();
+  </script>
+  <aside class="side side-l"><a href="https://lin.ee/wZ9Fra4" target="_blank" rel="noopener"><img src="../assets/images/side-left.jpg" class="banner" alt="官方 LINE@"></a></aside>
+  <aside class="side side-r"><a href="sponsor.html"><img src="../assets/images/side-right.jpg" class="banner" alt="24H 自動贊助"></a></aside>
+  <div class="float">
+    <a href="download.html" title="下載"><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>下載</a>
+    <a href="https://line.me/ti/g2/_9VdkL5d4EhVXHUO-o3IbPL-CzQwBAmOm2KGkA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" rel="noopener" class="line" title="社群"><svg viewBox="0 0 24 24"><path d="M24 10.3C24 4.94 18.62.57 12 .57S0 4.94 0 10.3c0 4.81 4.27 8.84 10.04 9.61.39.08.92.26 1.06.59.12.3.08.77.04 1.08l-.17 1.02c-.04.3-.24 1.19 1.05.64 1.29-.54 6.92-4.08 9.44-6.97C23.18 14.4 24 12.46 24 10.3M7.75 13.5H5.36a.63.63 0 01-.63-.63V8.11c0-.35.28-.63.63-.63.35 0 .63.28.63.63v4.13h1.76c.35 0 .63.28.63.63 0 .34-.28.63-.63.63m2.47-.63c0 .34-.28.63-.63.63a.63.63 0 01-.63-.63V8.11c0-.35.28-.63.63-.63.34 0 .63.28.63.63v4.76m5.74 0c0 .27-.17.51-.43.6a.65.65 0 01-.71-.22l-2.44-3.32v2.94c0 .34-.28.63-.63.63a.63.63 0 01-.63-.63V8.11c0-.27.17-.51.43-.6a.62.62 0 01.7.22l2.46 3.33V8.11c0-.35.28-.63.63-.63.34 0 .63.28.63.63v4.76m3.86-2.38c.35 0 .63.28.63.63 0 .34-.28.63-.63.63h-1.76v1.12h1.76c.35 0 .63.28.63.63 0 .34-.28.63-.63.63h-2.39a.63.63 0 01-.63-.63V8.11c0-.35.28-.63.63-.63h2.39c.35 0 .63.28.63.63 0 .35-.28.63-.63.63h-1.76v1.13h1.76"/></svg>社群</a>
+  </div>
+</body>
+</html>
