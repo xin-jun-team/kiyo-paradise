@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="琪玉天堂 — 武器製作介紹">
-<title>武器製作介紹 — 琪玉天堂</title>
+<meta name="description" content="琪玉天堂 — 職業之力">
+<title>職業之力 — 琪玉天堂</title>
 <link rel="icon" href="../assets/images/favicon-kiyo.png">
 <meta property="og:type" content="website">
 <meta property="og:title" content="琪玉天堂 — 認真一拳，手動最強">
@@ -100,39 +100,6 @@
   .vip-p b{color:var(--gold-hi)}
   .vip-sub{font-family:var(--serif);font-weight:900;color:var(--gold-hi);font-size:1.04rem;margin:18px 0 4px}
   .vip-more{text-align:center;color:var(--tx-mut);font-size:.92rem;letter-spacing:.12em;margin:26px 0 0}
-  .cf-intro{color:var(--tx-hi);font-size:.96rem;line-height:2}
-  .cf-intro b{color:var(--gold-hi)}
-  .wrapwide{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
-  .tbl-wrap{margin-top:6px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
-  table.cr{width:100%;border-collapse:collapse;font-size:.9rem;table-layout:fixed}
-  table.cr col.c-ty{width:20%}table.cr col.c-mt{width:80%}
-  table.cr th,table.cr td{padding:13px 16px;text-align:left;border-bottom:1px solid rgba(240,194,60,.12);line-height:1.85;vertical-align:top;word-break:break-word}
-  table.cr thead th{background:rgba(255,122,30,.14);color:var(--gold-hi);font-family:var(--serif);font-weight:900}
-  table.cr tbody tr:last-child td{border-bottom:none}
-  table.cr tbody tr:hover{background:rgba(255,122,30,.06)}
-  table.cr .mt{color:var(--tx-hi)}
-  table.dc{width:100%;border-collapse:collapse;font-size:.92rem;margin-top:6px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
-  table.dc th,table.dc td{padding:13px 16px;text-align:left;border-bottom:1px solid rgba(240,194,60,.12);line-height:1.8}
-  table.dc thead th{background:rgba(255,122,30,.14);color:var(--gold-hi);font-family:var(--serif);font-weight:900}
-  table.dc tbody tr:last-child td{border-bottom:none}
-  table.dc td:first-child{color:var(--gold-hi);font-weight:700}
-  table.dc td:not(:first-child){color:var(--ember-hi);font-weight:700}
-  .dc-note{color:var(--tx-mut);font-size:.86rem;margin-top:10px}
-  .rb{font-size:.78rem;font-weight:800;border-radius:6px;padding:4px 11px;white-space:nowrap;display:inline-block}
-  .rb.fine{color:#5fcf7a;border:1px solid rgba(95,207,122,.4);background:rgba(95,207,122,.1)}
-  .rb.rare{color:#4aa3ff;border:1px solid rgba(74,163,255,.4);background:rgba(74,163,255,.1)}
-  .rb.hero{color:var(--gold-hi);border:1px solid var(--line);background:rgba(240,194,60,.1)}
-  .rb.legend{color:var(--ember-hi);border:1px solid rgba(255,122,30,.4);background:rgba(255,122,30,.1)}
-  .rb.myth{color:#ff6a8a;border:1px solid rgba(255,106,138,.4);background:rgba(255,106,138,.12)}
-  .rb.unique{color:#e07aff;border:1px solid rgba(224,122,255,.45);background:rgba(224,122,255,.12)}
-  @media(max-width:760px){
-    .tbl-wrap{border:none}
-    table.cr,table.cr tbody,table.cr tr,table.cr td{display:block;width:100%}
-    table.cr colgroup,table.cr thead{display:none}
-    table.cr tr{border:1px solid var(--line);border-radius:12px;margin-bottom:14px;padding:6px 8px 10px;background:linear-gradient(160deg,rgba(36,22,9,.7),rgba(18,10,4,.8))}
-    table.cr td{border:none;padding:8px 10px}
-    table.cr td.ty{padding-bottom:2px}
-  }
   /*SIDEFX*/
   .side{position:fixed;top:50%;transform:translateY(-50%);z-index:30;width:182px;display:none}
   .side-l{left:12px}.side-r{right:12px;width:273px}
@@ -144,6 +111,31 @@
   .float a.line:hover{border-color:#06c755;color:#3ee27f}
   .float svg{width:21px;height:21px;fill:currentColor}
   @media(max-width:560px){.float a{width:46px;height:46px}}
+  .wrapwide{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+  .jpw{background:rgba(36,22,9,.5);border:1px solid var(--line);border-left:3px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:18px}
+  .jpw.c-gold{border-left-color:var(--gold-hi)}.jpw.c-blue{border-left-color:#4aa3ff}.jpw.c-green{border-left-color:#5fcf7a}.jpw.c-purple{border-left-color:#c08cff}.jpw.c-red{border-left-color:#ff6a8a}
+  .jpw__h{font-family:var(--serif);font-weight:900;font-size:1.16rem;color:var(--gold-hi);display:flex;align-items:center;gap:10px;margin-bottom:12px}
+  .jpw__h .em{font-size:1.5rem}.jpw__h .pw{color:var(--ember-hi);font-size:.92rem;font-weight:700}
+  .tbl-wrap{border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  table.jp{width:100%;border-collapse:collapse;font-size:.88rem}
+  table.jp th,table.jp td{padding:11px 13px;text-align:left;border-bottom:1px solid rgba(240,194,60,.12);line-height:1.7;vertical-align:top}
+  table.jp thead th{background:rgba(255,122,30,.14);color:var(--gold-hi);font-family:var(--serif);font-weight:900;white-space:nowrap}
+  table.jp tbody tr:last-child td{border-bottom:none}
+  table.jp tbody tr:hover{background:rgba(255,122,30,.06)}
+  table.jp td:first-child{color:var(--gold-hi);font-weight:800;white-space:nowrap}
+  table.jp td{color:var(--tx-hi)}
+  table.jp tr.mx td{background:rgba(255,122,30,.1)}table.jp tr.mx td:first-child{color:var(--gold-hi)}
+  @media(max-width:760px){
+    .tbl-wrap{border:none}
+    table.jp,table.jp tbody,table.jp tr,table.jp td{display:block;width:100%}
+    table.jp thead{display:none}
+    table.jp tr{border:1px solid var(--line);border-radius:12px;margin-bottom:12px;padding:4px 6px 8px;background:linear-gradient(160deg,rgba(36,22,9,.7),rgba(18,10,4,.8))}
+    table.jp td{border:none;border-bottom:1px solid rgba(240,194,60,.1);padding:9px 14px}
+    table.jp tr td:last-child{border-bottom:none}
+    table.jp td::before{content:attr(data-label);display:block;font-size:.7rem;color:var(--ember-hi);letter-spacing:.06em;font-weight:700;margin-bottom:3px}
+    table.jp td:first-child{font-family:var(--serif);font-size:1.05rem;background:rgba(255,122,30,.08);border-radius:8px;margin:2px 0 4px}
+    table.jp td:first-child::before{content:"";display:none}
+  }
 </style>
 </head>
 <body>
@@ -263,39 +255,95 @@
   </nav>
 
   <div class="phero">
-    <p class="phero__eyebrow">製作系統</p>
-    <h1 class="phero__title">武器製作介紹</h1>
+    <p class="phero__eyebrow">遊戲特色</p>
+    <h1 class="phero__title">職業之力</h1>
   </div>
 
   <main class="main">
     <div class="wrap">
 
       <div class="card">
-        <img src="../assets/images/ip/kiyo-carry.png" class="kiyo kiyo-tr" alt="">
-        <h2>⚔️ 武器製作介紹</h2>
-        <ul class="list">
-          <li><b style="color:var(--gold-hi)">粉末</b>可將箱子於 NPC 分解獲取。</li>
-          <li><b style="color:var(--gold-hi)">製作秘笈</b>可至各地圖掉落蒐集。</li>
-        </ul>
+        <img src="../assets/images/ip/kiyo-punch.png" class="kiyo kiyo-tr" alt="">
+        <h2>💪 職業之力</h2>
+        <p class="sp-intro" style="color:var(--tx-hi);line-height:2">各職業專屬之力，逐階強化對應核心屬性，滿級解鎖最強加成。</p>
       </div>
 
     </div>
     <div class="wrapwide">
-      <div class="card">
-        <h2>⚔️ 武器製作</h2>
-        <div class="tbl-wrap">
-          <table class="cr">
-            <colgroup><col class="c-ty"><col class="c-mt"></colgroup>
-            <thead><tr><th>種類</th><th>所需材料</th></tr></thead>
-            <tbody>
-              <tr><td class="ty" data-label="種類"><span class="rb fine">高級武器</span></td><td class="mt" data-label="所需材料">高級秘笈x2 + 100萬天幣 + 武器粉末x20 + +7 一般武器</td></tr>
-              <tr><td class="ty" data-label="種類"><span class="rb rare">稀有武器</span></td><td class="mt" data-label="所需材料">稀有秘笈x2 + 高級秘笈x4 + 600萬天幣 + 武器粉末x300 + +8 高級武器</td></tr>
-              <tr><td class="ty" data-label="種類"><span class="rb hero">英雄武器</span></td><td class="mt" data-label="所需材料">英雄秘笈x2 + 稀有秘笈x4 + 高級秘笈x8 + 3000萬天幣 + 武器粉末x2000 + +8 稀有武器</td></tr>
-              <tr><td class="ty" data-label="種類"><span class="rb legend">傳說武器</span></td><td class="mt" data-label="所需材料">傳說秘笈x2 + 英雄秘笈x4 + 稀有秘笈x8 + 1億天幣 + 武器粉末x8000 + +9 英雄武器</td></tr>
-              <tr><td class="ty" data-label="種類"><span class="rb myth">神話武器</span></td><td class="mt" data-label="所需材料">神話秘笈x2 + 傳說秘笈x4 + 英雄秘笈x8 + 3億天幣 + 武器粉末x25000 + +9 傳說武器</td></tr>
-            </tbody>
-          </table>
-        </div>
+      <div class="jpw c-gold">
+        <div class="jpw__h"><span class="em">👑</span>王族<span class="pw">· 殷海薩之力</span></div>
+        <div class="tbl-wrap"><table class="jp">
+          <thead><tr><th>等級</th><th>遭受傷害機率治癒</th><th>PVP 減傷</th><th>近距傷害</th></tr></thead>
+          <tbody>
+              <tr><td data-label="等級">初始</td><td data-label="遭受傷害機率治癒">4% 機率治癒 50~100</td><td data-label="PVP 減傷">+1</td><td data-label="近距傷害">+1</td></tr>
+              <tr><td data-label="等級">LV.1</td><td data-label="遭受傷害機率治癒">5% 機率治癒 100~150</td><td data-label="PVP 減傷">+1</td><td data-label="近距傷害">+1</td></tr>
+              <tr><td data-label="等級">LV.2</td><td data-label="遭受傷害機率治癒">6% 機率治癒 150~200</td><td data-label="PVP 減傷">+2</td><td data-label="近距傷害">+2</td></tr>
+              <tr><td data-label="等級">LV.3</td><td data-label="遭受傷害機率治癒">7% 機率治癒 200~250</td><td data-label="PVP 減傷">+2</td><td data-label="近距傷害">+2</td></tr>
+              <tr><td data-label="等級">LV.4</td><td data-label="遭受傷害機率治癒">8% 機率治癒 250~300</td><td data-label="PVP 減傷">+3</td><td data-label="近距傷害">+3</td></tr>
+              <tr><td data-label="等級">LV.5</td><td data-label="遭受傷害機率治癒">9% 機率治癒 300~350</td><td data-label="PVP 減傷">+3</td><td data-label="近距傷害">+3</td></tr>
+              <tr class="mx"><td data-label="等級">MAX</td><td data-label="遭受傷害機率治癒">10% 機率治癒 350~400</td><td data-label="PVP 減傷">+5</td><td data-label="近距傷害">+5</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="jpw c-blue">
+        <div class="jpw__h"><span class="em">🛡️</span>騎士<span class="pw">· 屠龍者之力</span></div>
+        <div class="tbl-wrap"><table class="jp">
+          <thead><tr><th>等級</th><th>衝擊之暈命中率</th><th>新增抗魔</th><th>HP 加成</th><th>傷害減免</th></tr></thead>
+          <tbody>
+              <tr><td data-label="等級">初始</td><td data-label="衝擊之暈命中率">提高 1%</td><td data-label="新增抗魔">+2</td><td data-label="HP 加成">+100</td><td data-label="傷害減免">+1</td></tr>
+              <tr><td data-label="等級">LV.1</td><td data-label="衝擊之暈命中率">提高 2%</td><td data-label="新增抗魔">+4</td><td data-label="HP 加成">+200</td><td data-label="傷害減免">+2</td></tr>
+              <tr><td data-label="等級">LV.2</td><td data-label="衝擊之暈命中率">提高 3%</td><td data-label="新增抗魔">+6</td><td data-label="HP 加成">+300</td><td data-label="傷害減免">+3</td></tr>
+              <tr><td data-label="等級">LV.3</td><td data-label="衝擊之暈命中率">提高 5%</td><td data-label="新增抗魔">+8</td><td data-label="HP 加成">+400</td><td data-label="傷害減免">+4</td></tr>
+              <tr><td data-label="等級">LV.4</td><td data-label="衝擊之暈命中率">提高 7%</td><td data-label="新增抗魔">+10</td><td data-label="HP 加成">+500</td><td data-label="傷害減免">+5</td></tr>
+              <tr><td data-label="等級">LV.5</td><td data-label="衝擊之暈命中率">提高 9%</td><td data-label="新增抗魔">+12</td><td data-label="HP 加成">+800</td><td data-label="傷害減免">+6</td></tr>
+              <tr class="mx"><td data-label="等級">MAX</td><td data-label="衝擊之暈命中率">提高 12%</td><td data-label="新增抗魔">+15</td><td data-label="HP 加成">+1000</td><td data-label="傷害減免">+8</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="jpw c-green">
+        <div class="jpw__h"><span class="em">🏹</span>妖精<span class="pw">· 席琳之力</span></div>
+        <div class="tbl-wrap"><table class="jp">
+          <thead><tr><th>等級</th><th>三重傷害</th><th>遠距離命中</th><th>遠距離傷害</th><th>近距離傷害</th><th>遠距離爆擊</th></tr></thead>
+          <tbody>
+              <tr><td data-label="等級">初始</td><td data-label="三重傷害">+10</td><td data-label="遠距離命中">+3</td><td data-label="遠距離傷害">+3</td><td data-label="近距離傷害">+1</td><td data-label="遠距離爆擊">—</td></tr>
+              <tr><td data-label="等級">LV.1</td><td data-label="三重傷害">+16</td><td data-label="遠距離命中">+5</td><td data-label="遠距離傷害">+5</td><td data-label="近距離傷害">+2</td><td data-label="遠距離爆擊">+1</td></tr>
+              <tr><td data-label="等級">LV.2</td><td data-label="三重傷害">+20</td><td data-label="遠距離命中">+6</td><td data-label="遠距離傷害">+5</td><td data-label="近距離傷害">+2</td><td data-label="遠距離爆擊">+1</td></tr>
+              <tr><td data-label="等級">LV.3</td><td data-label="三重傷害">+24</td><td data-label="遠距離命中">+8</td><td data-label="遠距離傷害">+10</td><td data-label="近距離傷害">+2</td><td data-label="遠距離爆擊">+2</td></tr>
+              <tr><td data-label="等級">LV.4</td><td data-label="三重傷害">+28</td><td data-label="遠距離命中">+10</td><td data-label="遠距離傷害">+10</td><td data-label="近距離傷害">+10</td><td data-label="遠距離爆擊">+2</td></tr>
+              <tr><td data-label="等級">LV.5</td><td data-label="三重傷害">+35</td><td data-label="遠距離命中">+12</td><td data-label="遠距離傷害">+15</td><td data-label="近距離傷害">+10</td><td data-label="遠距離爆擊">+3</td></tr>
+              <tr class="mx"><td data-label="等級">MAX</td><td data-label="三重傷害">+50</td><td data-label="遠距離命中">+15</td><td data-label="遠距離傷害">+20</td><td data-label="近距離傷害">+15</td><td data-label="遠距離爆擊">+3</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="jpw c-purple">
+        <div class="jpw__h"><span class="em">🪄</span>法師<span class="pw">· 艾歐丁之力</span></div>
+        <div class="tbl-wrap"><table class="jp">
+          <thead><tr><th>等級</th><th>魅力加成</th><th>烈炎術傷害</th><th>魔力回復</th></tr></thead>
+          <tbody>
+              <tr><td data-label="等級">初始</td><td data-label="魅力加成">+9</td><td data-label="烈炎術傷害">+8</td><td data-label="魔力回復">+2</td></tr>
+              <tr><td data-label="等級">LV.1</td><td data-label="魅力加成">+12</td><td data-label="烈炎術傷害">+15</td><td data-label="魔力回復">+2</td></tr>
+              <tr><td data-label="等級">LV.2</td><td data-label="魅力加成">+12</td><td data-label="烈炎術傷害">+30</td><td data-label="魔力回復">+4</td></tr>
+              <tr><td data-label="等級">LV.3</td><td data-label="魅力加成">+18</td><td data-label="烈炎術傷害">+45</td><td data-label="魔力回復">+4</td></tr>
+              <tr><td data-label="等級">LV.4</td><td data-label="魅力加成">+21</td><td data-label="烈炎術傷害">+60</td><td data-label="魔力回復">+6</td></tr>
+              <tr><td data-label="等級">LV.5</td><td data-label="魅力加成">+25</td><td data-label="烈炎術傷害">+75</td><td data-label="魔力回復">+6</td></tr>
+              <tr class="mx"><td data-label="等級">MAX</td><td data-label="魅力加成">+36</td><td data-label="烈炎術傷害">+100</td><td data-label="魔力回復">+10</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="jpw c-red">
+        <div class="jpw__h"><span class="em">🗡️</span>黑暗妖精<span class="pw">· 格蘭肯之力</span></div>
+        <div class="tbl-wrap"><table class="jp">
+          <thead><tr><th>等級</th><th>近戰爆擊率</th><th>爆擊倍率</th><th>攻擊命中</th></tr></thead>
+          <tbody>
+              <tr><td data-label="等級">初始</td><td data-label="近戰爆擊率">+1%</td><td data-label="爆擊倍率">1.02 倍</td><td data-label="攻擊命中">+1</td></tr>
+              <tr><td data-label="等級">LV.1</td><td data-label="近戰爆擊率">+2%</td><td data-label="爆擊倍率">1.04 倍</td><td data-label="攻擊命中">+1</td></tr>
+              <tr><td data-label="等級">LV.2</td><td data-label="近戰爆擊率">+3%</td><td data-label="爆擊倍率">1.06 倍</td><td data-label="攻擊命中">+2</td></tr>
+              <tr><td data-label="等級">LV.3</td><td data-label="近戰爆擊率">+4%</td><td data-label="爆擊倍率">1.08 倍</td><td data-label="攻擊命中">+2</td></tr>
+              <tr><td data-label="等級">LV.4</td><td data-label="近戰爆擊率">+5%</td><td data-label="爆擊倍率">1.10 倍</td><td data-label="攻擊命中">+3</td></tr>
+              <tr><td data-label="等級">LV.5</td><td data-label="近戰爆擊率">+6%</td><td data-label="爆擊倍率">1.12 倍</td><td data-label="攻擊命中">+3</td></tr>
+              <tr class="mx"><td data-label="等級">MAX</td><td data-label="近戰爆擊率">+8%</td><td data-label="爆擊倍率">1.15 倍</td><td data-label="攻擊命中">+5</td></tr>
+          </tbody>
+        </table></div>
       </div>
     </div>
     <div class="wrap">
