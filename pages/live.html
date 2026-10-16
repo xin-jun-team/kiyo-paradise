@@ -129,6 +129,9 @@
   .float a.line:hover{border-color:#06c755;color:#3ee27f}
   .float svg{width:21px;height:21px;fill:currentColor}
   @media(max-width:560px){.float a{width:46px;height:46px}}
+  .live-shot-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px;align-items:start}
+  .live-shot-grid img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);box-shadow:0 10px 30px -12px rgba(0,0,0,.7);display:block}
+  @media(max-width:620px){.live-shot-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -265,6 +268,14 @@
         <img src="../assets/images/ip/kiyo-wave.png" class="kiyo kiyo-tr" alt="">
         <h2>🎬 直播說明與獎勵辦法</h2>
         <p class="lv-intro">直播同樂、輕鬆領獎，詳細規章請務必遵守！</p>
+      </div>
+
+      <div class="card">
+        <h2>📸 直播實況畫面</h2>
+        <div class="live-shot-grid">
+          <img src="../assets/images/live-1.jpg" alt="琪玉天堂 直播畫面" loading="lazy">
+          <img src="../assets/images/live-2.jpg" alt="琪玉天堂 直播畫面" loading="lazy">
+        </div>
       </div>
 
       <div class="card">
